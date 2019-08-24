@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<title>step response tx-rx.</title>
+
+<xmp theme="bootstrap" style="display:none;">
+<br>
+
+##Sensing with Step Response (transmit-receive, or tx-rx)
+
+
+  - [Arduino sketch for tx_rx](./tx_rx01.txt)  Single measurement.
+
+  - [Arduino sketch for tx_rx](./rx_tx02.txt)  Average of N points.  Has the algorithm built into the loop function.
+
+  - [Arduino sketch with function for tx_rx](./rx_tx03.txt)  Has the algorithm in a separate function, to make coding easier.
+
+  - [Arduino sketch including rgb LED](./tx_rx_rgb.txt)  Single measurement.
+
+  - Here's how it works:
+
+    - transmit (tx) pin is made alternately high (5V) and low (0V).
+    - This charges and discharges the tx electrode.
+    - On the rx electrode there is a small 'blip' up or down as the tx pin toggles.
+    - These blips are measured by the Arduino analog input (ADC), and "low" subracted from "high" (see figure).
+    - This result varies depending on how closely the two plates are coupled by the electric field.  It increases as the distance decreases and also
+    changes with the amount of overlap and the material between the plates.
+
+   ![picture](./figs/txrx_schematic.jpg)
+
+   Above is a sketch of the setup for tx-rx sensing.  The (optional) resistors between 5V and GND make the signal stabler.  The input
+   to the ADC is attached to the point halfway betwen 5V and ground, and is therefore at 2.5 volts, except for the transient
+   blips that occur at the tx electrode changes voltage.  These resistors should be equal and greater than 1 Mega Ohm.
+
+
+
+</xmp>
+
+
+<script src="../../strapdown/strapdown.js"></script>
+</html>

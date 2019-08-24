@@ -1,0 +1,13 @@
+[Eagle]
+Version="09 01 00"
+Platform="Mac OS X"
+Globals="Globals"
+Desktop="Desktop"
+
+[Globals]
+AutoSaveProject=1
+UsedLibrary="/Applications/EAGLE-9.1.0/lbr/fab_eagle/fab.lbr"
+UsedLibrary="/Applications/EAGLE-9.1.0/lbr/fab .lbr"
+
+[Desktop]
+Screen="1440 900"
